@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSMutableArray+Sort.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSMutableArray *array = [@[@(1),@(2),@(3),@(4),@(5),@(6),@(7),@(8),@(9),@(10)] mutableCopy];
+//    [NSMutableArray sort_Bubble:array];
+    for (NSNumber *number in array) {
+        NSLog(@"number:%@",number);
+    }
+    
     return YES;
 }
 

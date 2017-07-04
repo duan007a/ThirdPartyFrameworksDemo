@@ -35,7 +35,6 @@
     
     [testImageV sd_setImageWithURL:[NSURL URLWithString:@"http://www.fuhaodq.com/d/file/201706/16/2uucyj1vlhyvjjr2779.jpg"]];
     
-    kCFRunLoopDefaultMode
 }
 
 
