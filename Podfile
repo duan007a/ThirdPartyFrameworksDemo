@@ -42,6 +42,7 @@ target 'SDLCDHCDemo' do
   pod 'Reveal-iOS-SDK', '~> 1.6.2'
   pod 'FLEX', '~> 2.4.0'
   
-
+  # 加解密
+  pod 'OpenSSL', '~> 1.0.210'
 
 end

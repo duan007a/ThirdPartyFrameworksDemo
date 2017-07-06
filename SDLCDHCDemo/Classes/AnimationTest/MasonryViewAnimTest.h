@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasonryViewAnimTest : UIView
+@protocol ProtocolTest <NSObject>
+
+@property (nonatomic, assign) NSInteger testNumber;
+
+@end
+
+@interface MasonryViewAnimTest : UIView<ProtocolTest>
 
 - (void)startAnimation;
 

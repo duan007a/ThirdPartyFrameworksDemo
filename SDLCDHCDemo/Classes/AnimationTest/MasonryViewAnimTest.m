@@ -10,6 +10,9 @@
 #import <Masonry/Masonry.h>
 
 @interface MasonryViewAnimTest ()
+{
+    NSInteger _testNumber;
+}
 
 @property (nonatomic, strong) UIView *animV;
 
@@ -47,6 +50,16 @@
     [UIView animateWithDuration:1.f animations:^{
         [self layoutIfNeeded];
     }];
+}
+
+- (void)setTestNumber:(NSInteger)testNumber
+{
+    _testNumber = testNumber;
+}
+
+- (NSInteger)testNumber
+{
+    return _testNumber;
 }
 
 @end
