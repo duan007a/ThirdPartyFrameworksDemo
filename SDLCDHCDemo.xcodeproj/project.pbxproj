@@ -13,6 +13,9 @@
 		2CB4185D1F07DA09000A6F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4185B1F07DA09000A6F79 /* LaunchScreen.storyboard */; };
 		2CB418721F07E6FA000A6F79 /* UIViewController+DHC_AOP.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB418711F07E6FA000A6F79 /* UIViewController+DHC_AOP.m */; };
 		2CB418751F07E86B000A6F79 /* MasonryViewAnimTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB418741F07E86B000A6F79 /* MasonryViewAnimTest.m */; };
+		68C8AAF91F1775230007D096 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAF81F1775230007D096 /* MyViewController.m */; };
+		68C8AAFD1F189C180007D096 /* KVOTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAFC1F189C180007D096 /* KVOTest.m */; };
+		68C8AB001F18C7AD0007D096 /* NSObject+dhc_observe.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAFF1F18C7AD0007D096 /* NSObject+dhc_observe.m */; };
 		68FE7ECA1F0B7612001CD09A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7EC71F0B7612001CD09A /* AppDelegate.m */; };
 		68FE7ECB1F0B7612001CD09A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7EC91F0B7612001CD09A /* ViewController.m */; };
 		68FE7ECE1F0B7639001CD09A /* NSMutableArray+Sort.mm in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7ECD1F0B7639001CD09A /* NSMutableArray+Sort.mm */; };
@@ -30,6 +33,12 @@
 		2CB418711F07E6FA000A6F79 /* UIViewController+DHC_AOP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DHC_AOP.m"; sourceTree = "<group>"; };
 		2CB418731F07E86B000A6F79 /* MasonryViewAnimTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasonryViewAnimTest.h; sourceTree = "<group>"; };
 		2CB418741F07E86B000A6F79 /* MasonryViewAnimTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonryViewAnimTest.m; sourceTree = "<group>"; };
+		68C8AAF71F1775230007D096 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		68C8AAF81F1775230007D096 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		68C8AAFB1F189C180007D096 /* KVOTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVOTest.h; sourceTree = "<group>"; };
+		68C8AAFC1F189C180007D096 /* KVOTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVOTest.m; sourceTree = "<group>"; };
+		68C8AAFE1F18C7AD0007D096 /* NSObject+dhc_observe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+dhc_observe.h"; sourceTree = "<group>"; };
+		68C8AAFF1F18C7AD0007D096 /* NSObject+dhc_observe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+dhc_observe.m"; sourceTree = "<group>"; };
 		68FE7EC61F0B7612001CD09A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		68FE7EC71F0B7612001CD09A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		68FE7EC81F0B7612001CD09A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -104,11 +113,11 @@
 		2CB418641F07E6B4000A6F79 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				68C8AAFA1F189B170007D096 /* KVO */,
 				68FE7EC51F0B7612001CD09A /* App */,
 				68FE7EC41F0B75D5001CD09A /* Sort */,
 				2CB418651F07E6B4000A6F79 /* AnimationTest */,
 				2CB418661F07E6B4000A6F79 /* AOPTest */,
-				2CB418671F07E6B4000A6F79 /* App */,
 				2CB4186A1F07E6B4000A6F79 /* CacheTest */,
 				2CB4186B1F07E6B4000A6F79 /* NetworkTest */,
 			);
@@ -133,13 +142,6 @@
 			path = AOPTest;
 			sourceTree = "<group>";
 		};
-		2CB418671F07E6B4000A6F79 /* App */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
 		2CB4186A1F07E6B4000A6F79 /* CacheTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +154,17 @@
 			children = (
 			);
 			path = NetworkTest;
+			sourceTree = "<group>";
+		};
+		68C8AAFA1F189B170007D096 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				68C8AAFB1F189C180007D096 /* KVOTest.h */,
+				68C8AAFC1F189C180007D096 /* KVOTest.m */,
+				68C8AAFE1F18C7AD0007D096 /* NSObject+dhc_observe.h */,
+				68C8AAFF1F18C7AD0007D096 /* NSObject+dhc_observe.m */,
+			);
+			path = KVO;
 			sourceTree = "<group>";
 		};
 		68FE7EC41F0B75D5001CD09A /* Sort */ = {
@@ -170,6 +183,8 @@
 				68FE7EC71F0B7612001CD09A /* AppDelegate.m */,
 				68FE7EC81F0B7612001CD09A /* ViewController.h */,
 				68FE7EC91F0B7612001CD09A /* ViewController.m */,
+				68C8AAF71F1775230007D096 /* MyViewController.h */,
+				68C8AAF81F1775230007D096 /* MyViewController.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -305,11 +320,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				68FE7ECA1F0B7612001CD09A /* AppDelegate.m in Sources */,
+				68C8AB001F18C7AD0007D096 /* NSObject+dhc_observe.m in Sources */,
 				2CB4184F1F07DA09000A6F79 /* main.m in Sources */,
 				2CB418721F07E6FA000A6F79 /* UIViewController+DHC_AOP.m in Sources */,
 				2CB418751F07E86B000A6F79 /* MasonryViewAnimTest.m in Sources */,
+				68C8AAFD1F189C180007D096 /* KVOTest.m in Sources */,
 				68FE7ECB1F0B7612001CD09A /* ViewController.m in Sources */,
 				68FE7ECE1F0B7639001CD09A /* NSMutableArray+Sort.mm in Sources */,
+				68C8AAF91F1775230007D096 /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

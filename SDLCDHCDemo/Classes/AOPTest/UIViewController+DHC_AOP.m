@@ -13,12 +13,12 @@
 
 + (void)load
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self aspect_hookSelector:@selector(viewDidAppear:) withOptions:AspectPositionAfter usingBlock:^(id instance, NSArray *args) {
-            NSLog(@"[UIViewController viewDidAppear:] has been swizzled");
-        } error:nil];
-    });
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        [self aspect_hookSelector:@selector(viewDidAppear:) withOptions:AspectPositionAfter usingBlock:^(id instance, NSArray *args) {
+//            NSLog(@"[UIViewController viewDidAppear:] has been swizzled");
+//        } error:nil];
+//    });
 }
 
 @end

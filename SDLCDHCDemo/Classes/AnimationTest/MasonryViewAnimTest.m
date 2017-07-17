@@ -62,4 +62,38 @@
     return _testNumber;
 }
 
+//- (NSInteger)hihao
+//{
+//    return 30;
+//}
+
+- (NSInteger)isHihao
+{
+    return 30;
+}
+
+- (NSUInteger)hash
+{
+    return 2;
+}
+
+/*
+- (BOOL)isEqual:(id)object
+{
+    if (![object isKindOfClass:[self class]])
+    {
+        return NO;
+    }
+    MasonryViewAnimTest *input = (MasonryViewAnimTest *)object;
+    if (self.hash == input.hash)
+    {
+        if (self.testNumber == input.testNumber)
+        {
+            return YES;
+        }
+    }
+    return NO;
+}
+*/
+
 @end

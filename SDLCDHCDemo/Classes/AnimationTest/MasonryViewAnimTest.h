@@ -16,6 +16,8 @@
 
 @interface MasonryViewAnimTest : UIView<ProtocolTest>
 
+@property (nonatomic, assign) NSInteger kvoValue;
+
 - (void)startAnimation;
 
 @end
