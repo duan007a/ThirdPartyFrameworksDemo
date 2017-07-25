@@ -72,6 +72,7 @@
     
     self.view.backgroundColor = UIColor.whiteColor;
     
+    /*
     BOOL res1 = [[NSObject class] isKindOfClass:[NSObject class]];
     BOOL res2 = [[NSObject class] isMemberOfClass:[NSObject class]];
     BOOL res3 = [[ViewController class] isKindOfClass:[ViewController class]];
@@ -85,6 +86,17 @@
     btn.frame = CGRectMake(100, 100, 200, 30);
     btn.backgroundColor = [UIColor redColor];
     [self.view addSubview:btn];
+     */
+    Class klass = NSClassFromString(@"NSString");
+    
+    unsigned int methodCount = 0;
+    Method *methods = class_copyMethodList(klass, &methodCount);
+    for (int i = 0; i < methodCount; ++i)
+    {
+        Method method = methods[i];
+        SEL methodSEL = method_getName(method);
+        NSLog(@"%@",NSStringFromSelector(methodSEL));
+    }
     
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -222,6 +234,10 @@
     [test testForKVO];
     
     [test setKvoValue:100];
+    
+    [[UIApplication sharedApplication] setAlternateIconName:@"newIcon.png" completionHandler:^(NSError * _Nullable error) {
+        NSLog(@"%@",error.description);
+    }];
 }
 
 
