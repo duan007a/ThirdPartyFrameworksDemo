@@ -105,7 +105,8 @@
 //    [self testForMasonryAnimation];
 //    [self testForSDWebImage];
 //    [self testForSQLite];
-    [self testForKVO];
+//    [self testForKVO];
+    [self testForSet];
 }
 
 - (void)btnClicked:(id)sender
@@ -238,6 +239,24 @@
     [[UIApplication sharedApplication] setAlternateIconName:@"newIcon.png" completionHandler:^(NSError * _Nullable error) {
         NSLog(@"%@",error.description);
     }];
+}
+
+- (void)testForSet
+{
+    NSMutableSet *testSet = [NSMutableSet set];
+    
+    MasonryViewAnimTest *testV1 = [MasonryViewAnimTest new];
+    testV1.testNumber = 10;
+    
+    MasonryViewAnimTest *testV2 = [MasonryViewAnimTest new];
+    testV2.testNumber = 10;
+    
+    MasonryViewAnimTest *testV3 = [MasonryViewAnimTest new];
+    testV3.testNumber = 10;
+    
+    [testSet addObject:testV1];
+    [testSet addObject:testV2];
+    [testSet addObject:testV3];
 }
 
 

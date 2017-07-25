@@ -74,26 +74,23 @@
 
 - (NSUInteger)hash
 {
-    return 2;
+    return [super hash];
 }
 
-/*
+
 - (BOOL)isEqual:(id)object
 {
-    if (![object isKindOfClass:[self class]])
+    if (![object isMemberOfClass:[self class]])
     {
         return NO;
     }
+    
     MasonryViewAnimTest *input = (MasonryViewAnimTest *)object;
-    if (self.hash == input.hash)
+    if (self.testNumber == input.testNumber)
     {
-        if (self.testNumber == input.testNumber)
-        {
-            return YES;
-        }
+        return YES;
     }
     return NO;
 }
-*/
 
 @end
