@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C9DEEF81F278B3B008F3156 /* DHCNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9DEEF71F278B3B008F3156 /* DHCNotificationCenter.m */; };
 		2CB4184F1F07DA09000A6F79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4184E1F07DA09000A6F79 /* main.m */; };
 		2CB418581F07DA09000A6F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB418561F07DA09000A6F79 /* Main.storyboard */; };
 		2CB4185A1F07DA09000A6F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB418591F07DA09000A6F79 /* Assets.xcassets */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C9DEEF61F278B3B008F3156 /* DHCNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCNotificationCenter.h; sourceTree = "<group>"; };
+		2C9DEEF71F278B3B008F3156 /* DHCNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCNotificationCenter.m; sourceTree = "<group>"; };
 		2CB4184A1F07DA09000A6F79 /* SDLCDHCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLCDHCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB4184E1F07DA09000A6F79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CB418571F07DA09000A6F79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				6806A3031F27364C006033B5 /* NotificationCenter */,
+				2C9DEEF61F278B3B008F3156 /* DHCNotificationCenter.h */,
+				2C9DEEF71F278B3B008F3156 /* DHCNotificationCenter.m */,
 			);
 			path = NotificationCenter;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				2CB418751F07E86B000A6F79 /* MasonryViewAnimTest.m in Sources */,
 				68C8AAFD1F189C180007D096 /* KVOTest.m in Sources */,
 				68FE7ECB1F0B7612001CD09A /* ViewController.m in Sources */,
+				2C9DEEF81F278B3B008F3156 /* DHCNotificationCenter.m in Sources */,
 				6806A2FE1F2241B2006033B5 /* NSString+DHC.m in Sources */,
 				68FE7ECE1F0B7639001CD09A /* NSMutableArray+Sort.mm in Sources */,
 				68C8AAF91F1775230007D096 /* MyViewController.m in Sources */,

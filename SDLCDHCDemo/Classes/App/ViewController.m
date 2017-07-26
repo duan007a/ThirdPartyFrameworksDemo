@@ -15,6 +15,7 @@
 #import <objc/message.h>
 #import "MyViewController.h"
 #import "KVOTest.h"
+#import "DHCNotificationCenter.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 {
@@ -26,40 +27,28 @@
 
 +(void)load
 {
-    Class klass = NSClassFromString(@"ViewController");
-    Method targetMethod = class_getInstanceMethod(klass, @selector(viewDidAppear:));
-    Method destMethod = class_getInstanceMethod(klass, @selector(customViewDidAppear:));
-    IMP targetMethodIMP = method_getImplementation(targetMethod);
-    IMP destMethodIMP = method_getImplementation(destMethod);
-    if (targetMethodIMP != _objc_msgForward)
+    Class klass = NSClassFromString(@"NSNotificationCenter");
+//    Method targetMethod = class_getInstanceMethod(klass, @selector(viewDidAppear:));
+//    Method destMethod = class_getInstanceMethod(klass, @selector(customViewDidAppear:));
+//    IMP targetMethodIMP = method_getImplementation(targetMethod);
+//    IMP destMethodIMP = method_getImplementation(destMethod);
+//    if (targetMethodIMP != _objc_msgForward)
+//    {
+//        BOOL isExist = class_addMethod(klass, @selector(viewDidAppear:), destMethodIMP, method_getTypeEncoding(destMethod));
+//        if (!isExist)
+//        {
+//            method_exchangeImplementations(destMethod, targetMethod);
+//        }
+//    }
+    unsigned int outCount = 0;
+    Ivar *ivars = class_copyIvarList(klass, &outCount);
+    for (unsigned int index = 0; index < outCount; index++)
     {
-        BOOL isExist = class_addMethod(klass, @selector(viewDidAppear:), destMethodIMP, method_getTypeEncoding(destMethod));
-        if (!isExist)
-        {
-            method_exchangeImplementations(destMethod, targetMethod);
-        }
+        Ivar ivar = ivars[index];
+        const char *ivar_name = ivar_getName(ivar);
+        const char *ivar_type = ivar_getTypeEncoding(ivar);
+        printf("%s,%s\n",ivar_name,ivar_type);
     }
-    
-    objc_property_t property = class_getProperty(klass, "tt");
-    if (!property) {
-        unsigned int totalAttributesCount = 1;
-        objc_property_attribute_t *attributes = malloc(sizeof(objc_property_attribute_t) * totalAttributesCount);
-        if (attributes)
-        {
-            objc_property_attribute_t attribute;
-            attribute.name = "tt";
-            attribute.value = [@(@encode(CGRect)) UTF8String];
-            attributes[0] = attribute;
-
-            BOOL addedProperty = class_addProperty(klass, "tt", attributes, totalAttributesCount);
-            free(attributes);
-        }
-    }
-
-    
-//    BOOL addProtocol = class_addProtocol(klass, @protocol(UITextFieldDelegate));
-//    NSDictionary *frameAttributes = @{kFLEXUtilityAttributeTypeEncoding : @(@encode(CGRect)), kFLEXUtilityAttributeNonAtomic : @""};
-//    class_addProperty(klass, "addedProperty", <#const objc_property_attribute_t *attributes#>, <#unsigned int attributeCount#>)
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -87,16 +76,7 @@
     btn.backgroundColor = [UIColor redColor];
     [self.view addSubview:btn];
      */
-    Class klass = NSClassFromString(@"NSString");
     
-    unsigned int methodCount = 0;
-    Method *methods = class_copyMethodList(klass, &methodCount);
-    for (int i = 0; i < methodCount; ++i)
-    {
-        Method method = methods[i];
-        SEL methodSEL = method_getName(method);
-        NSLog(@"%@",NSStringFromSelector(methodSEL));
-    }
     
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -106,7 +86,8 @@
 //    [self testForSDWebImage];
 //    [self testForSQLite];
 //    [self testForKVO];
-    [self testForSet];
+//    [self testForSet];
+    [self testForNotificationCenter];
 }
 
 - (void)btnClicked:(id)sender
@@ -124,6 +105,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)testForCategory
+{
+    Class klass = NSClassFromString(@"NSString");
+    
+    unsigned int methodCount = 0;
+    Method *methods = class_copyMethodList(klass, &methodCount);
+    for (int i = 0; i < methodCount; ++i)
+    {
+        Method method = methods[i];
+        SEL methodSEL = method_getName(method);
+        NSLog(@"%@",NSStringFromSelector(methodSEL));
+    }
 }
 
 - (void)testForStackView{
@@ -257,6 +252,19 @@
     [testSet addObject:testV1];
     [testSet addObject:testV2];
     [testSet addObject:testV3];
+}
+
+- (void)testForNotificationCenter
+{
+    [[DHCNotificationCenter defaultCenter] addObserver:self selector:@selector(testForKVO) name:@"testForNotificationCenter" object:nil];
+    [[DHCNotificationCenter defaultCenter] addObserver:self selector:@selector(testForSQLite) name:@"anotherTestForNotificationCenter" object:nil];
+    [[DHCNotificationCenter defaultCenter] addObserver:self selector:@selector(testForSet) name:@"testForNotificationCenter" object:nil];
+    
+    [[DHCNotificationCenter defaultCenter] postNotification:[[NSNotification alloc] initWithName:@"testForNotificationCenter" object:nil userInfo:nil]];
+    
+    [[DHCNotificationCenter defaultCenter] removeObserver:self name:@"testForNotificationCenter" object:nil];
+    
+//    [[DHCNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
