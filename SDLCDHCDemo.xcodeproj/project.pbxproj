@@ -19,6 +19,8 @@
 		68C8AAF91F1775230007D096 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAF81F1775230007D096 /* MyViewController.m */; };
 		68C8AAFD1F189C180007D096 /* KVOTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAFC1F189C180007D096 /* KVOTest.m */; };
 		68C8AB001F18C7AD0007D096 /* NSObject+dhc_observe.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAFF1F18C7AD0007D096 /* NSObject+dhc_observe.m */; };
+		68D837B61F2B1B4E0088AF03 /* lock in Resources */ = {isa = PBXBuildFile; fileRef = 68D837B51F2B1B4E0088AF03 /* lock */; };
+		68D837B81F2B1B5C0088AF03 /* RunLoop in Resources */ = {isa = PBXBuildFile; fileRef = 68D837B71F2B1B5C0088AF03 /* RunLoop */; };
 		68FE7ECA1F0B7612001CD09A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7EC71F0B7612001CD09A /* AppDelegate.m */; };
 		68FE7ECB1F0B7612001CD09A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7EC91F0B7612001CD09A /* ViewController.m */; };
 		68FE7ECE1F0B7639001CD09A /* NSMutableArray+Sort.mm in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7ECD1F0B7639001CD09A /* NSMutableArray+Sort.mm */; };
@@ -47,6 +49,8 @@
 		68C8AAFC1F189C180007D096 /* KVOTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVOTest.m; sourceTree = "<group>"; };
 		68C8AAFE1F18C7AD0007D096 /* NSObject+dhc_observe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+dhc_observe.h"; sourceTree = "<group>"; };
 		68C8AAFF1F18C7AD0007D096 /* NSObject+dhc_observe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+dhc_observe.m"; sourceTree = "<group>"; };
+		68D837B51F2B1B4E0088AF03 /* lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lock; sourceTree = "<group>"; };
+		68D837B71F2B1B5C0088AF03 /* RunLoop */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RunLoop; sourceTree = "<group>"; };
 		68FE7EC61F0B7612001CD09A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		68FE7EC71F0B7612001CD09A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		68FE7EC81F0B7612001CD09A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		2CB418641F07E6B4000A6F79 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				68D837B31F2B1B370088AF03 /* Lock */,
+				68D837B41F2B1B370088AF03 /* RunLoop */,
 				6806A3021F2735F9006033B5 /* NotificationCenter */,
 				68C8AAFA1F189B170007D096 /* KVO */,
 				68FE7EC51F0B7612001CD09A /* App */,
@@ -186,6 +192,22 @@
 				68C8AAFF1F18C7AD0007D096 /* NSObject+dhc_observe.m */,
 			);
 			path = KVO;
+			sourceTree = "<group>";
+		};
+		68D837B31F2B1B370088AF03 /* Lock */ = {
+			isa = PBXGroup;
+			children = (
+				68D837B51F2B1B4E0088AF03 /* lock */,
+			);
+			path = Lock;
+			sourceTree = "<group>";
+		};
+		68D837B41F2B1B370088AF03 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				68D837B71F2B1B5C0088AF03 /* RunLoop */,
+			);
+			path = RunLoop;
 			sourceTree = "<group>";
 		};
 		68FE7EC41F0B75D5001CD09A /* Sort */ = {
@@ -279,7 +301,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D837B81F2B1B5C0088AF03 /* RunLoop in Resources */,
 				2CB4185D1F07DA09000A6F79 /* LaunchScreen.storyboard in Resources */,
+				68D837B61F2B1B4E0088AF03 /* lock in Resources */,
 				2CB4185A1F07DA09000A6F79 /* Assets.xcassets in Resources */,
 				6806A3041F27364C006033B5 /* NotificationCenter in Resources */,
 				2CB418581F07DA09000A6F79 /* Main.storyboard in Resources */,
