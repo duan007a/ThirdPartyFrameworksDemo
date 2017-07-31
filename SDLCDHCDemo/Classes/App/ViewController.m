@@ -16,6 +16,7 @@
 #import "MyViewController.h"
 #import "KVOTest.h"
 #import "DHCNotificationCenter.h"
+#import "DHCLockDemo.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 {
@@ -87,7 +88,8 @@
 //    [self testForSQLite];
 //    [self testForKVO];
 //    [self testForSet];
-    [self testForNotificationCenter];
+//    [self testForNotificationCenter];
+    [self testForLock];
 }
 
 - (void)btnClicked:(id)sender
@@ -265,6 +267,11 @@
     [[DHCNotificationCenter defaultCenter] removeObserver:self name:@"testForNotificationCenter" object:nil];
     
 //    [[DHCNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)testForLock
+{
+    DHCLockDemo *lockDemo = [[DHCLockDemo alloc] init];
 }
 
 

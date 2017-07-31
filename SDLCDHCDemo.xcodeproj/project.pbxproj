@@ -21,6 +21,7 @@
 		68C8AB001F18C7AD0007D096 /* NSObject+dhc_observe.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAFF1F18C7AD0007D096 /* NSObject+dhc_observe.m */; };
 		68D837B61F2B1B4E0088AF03 /* lock in Resources */ = {isa = PBXBuildFile; fileRef = 68D837B51F2B1B4E0088AF03 /* lock */; };
 		68D837B81F2B1B5C0088AF03 /* RunLoop in Resources */ = {isa = PBXBuildFile; fileRef = 68D837B71F2B1B5C0088AF03 /* RunLoop */; };
+		68D837BB1F2B34E80088AF03 /* DHCLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D837BA1F2B34E80088AF03 /* DHCLockDemo.m */; };
 		68FE7ECA1F0B7612001CD09A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7EC71F0B7612001CD09A /* AppDelegate.m */; };
 		68FE7ECB1F0B7612001CD09A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7EC91F0B7612001CD09A /* ViewController.m */; };
 		68FE7ECE1F0B7639001CD09A /* NSMutableArray+Sort.mm in Sources */ = {isa = PBXBuildFile; fileRef = 68FE7ECD1F0B7639001CD09A /* NSMutableArray+Sort.mm */; };
@@ -51,6 +52,8 @@
 		68C8AAFF1F18C7AD0007D096 /* NSObject+dhc_observe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+dhc_observe.m"; sourceTree = "<group>"; };
 		68D837B51F2B1B4E0088AF03 /* lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lock; sourceTree = "<group>"; };
 		68D837B71F2B1B5C0088AF03 /* RunLoop */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RunLoop; sourceTree = "<group>"; };
+		68D837B91F2B34E80088AF03 /* DHCLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCLockDemo.h; sourceTree = "<group>"; };
+		68D837BA1F2B34E80088AF03 /* DHCLockDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCLockDemo.m; sourceTree = "<group>"; };
 		68FE7EC61F0B7612001CD09A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		68FE7EC71F0B7612001CD09A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		68FE7EC81F0B7612001CD09A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				68D837B51F2B1B4E0088AF03 /* lock */,
+				68D837B91F2B34E80088AF03 /* DHCLockDemo.h */,
+				68D837BA1F2B34E80088AF03 /* DHCLockDemo.m */,
 			);
 			path = Lock;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				2CB4184F1F07DA09000A6F79 /* main.m in Sources */,
 				2CB418721F07E6FA000A6F79 /* UIViewController+DHC_AOP.m in Sources */,
 				2CB418751F07E86B000A6F79 /* MasonryViewAnimTest.m in Sources */,
+				68D837BB1F2B34E80088AF03 /* DHCLockDemo.m in Sources */,
 				68C8AAFD1F189C180007D096 /* KVOTest.m in Sources */,
 				68FE7ECB1F0B7612001CD09A /* ViewController.m in Sources */,
 				2C9DEEF81F278B3B008F3156 /* DHCNotificationCenter.m in Sources */,
