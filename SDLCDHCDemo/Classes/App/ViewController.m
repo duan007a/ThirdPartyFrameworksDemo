@@ -17,8 +17,10 @@
 #import "KVOTest.h"
 #import "DHCNotificationCenter.h"
 #import "DHCLockDemo.h"
+#import "DHCTableViewCell.h"
+#import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 
-@interface ViewController ()<UITextFieldDelegate>
+@interface ViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     UIStackView *containerView;
 }
@@ -89,7 +91,8 @@
 //    [self testForKVO];
 //    [self testForSet];
 //    [self testForNotificationCenter];
-    [self testForLock];
+//    [self testForLock];
+    [self testForCellAutolayout];
 }
 
 - (void)btnClicked:(id)sender
@@ -272,6 +275,41 @@
 - (void)testForLock
 {
     DHCLockDemo *lockDemo = [[DHCLockDemo alloc] init];
+}
+
+- (void)testForCellAutolayout
+{
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.estimatedRowHeight = 80;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [tableView registerClass:[DHCTableViewCell class] forCellReuseIdentifier:@"DHCTableViewCell"];
+    [self.view addSubview:tableView];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DHCTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DHCTableViewCell" forIndexPath:indexPath];
+    cell.nameLabel.text = @"apsodijaposdjq[w0ejfqw0ijvas;dlcmxasijvav;lamscoiajsdvas;ldmvasdkvjas[odijvmals;dvmasdjieorvma;lksdvmapoerjgiorqewgvmal;sdkvmaso;dvjoewrpvals;kdvmas;ovjieaowprvasl;kdvmas;odivjawerj";
+    cell.index = indexPath.row;
+    [cell test];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [tableView fd_heightForCellWithIdentifier:@"DHCTableViewCell" configuration:^(DHCTableViewCell *cell) {
+        cell.nameLabel.text = @"apsodijaposdjq[w0ejfqw0ijvas;dlcmxasijvav;lamscoiajsdvas;ldmvasdkvjas[odijvmals;dvmasdjieorvma;lksdvmapoerjgiorqewgvmal;sdkvmaso;dvjoewrpvals;kdvmas;ovjieaowprvasl;kdvmas;odivjawerj";
+        cell.index = indexPath.row;
+        [cell test];
+    }];
 }
 
 

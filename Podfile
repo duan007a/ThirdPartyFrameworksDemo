@@ -45,4 +45,6 @@ target 'SDLCDHCDemo' do
   # 加解密
   pod 'OpenSSL', '~> 1.0.210'
 
+# 自动布局
+  pod "UITableView+FDTemplateLayoutCell"
 end
