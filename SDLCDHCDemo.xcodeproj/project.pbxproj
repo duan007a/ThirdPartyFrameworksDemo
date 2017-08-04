@@ -16,6 +16,8 @@
 		2CB418751F07E86B000A6F79 /* MasonryViewAnimTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB418741F07E86B000A6F79 /* MasonryViewAnimTest.m */; };
 		6806A2FE1F2241B2006033B5 /* NSString+DHC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6806A2FD1F2241B2006033B5 /* NSString+DHC.m */; };
 		6806A3041F27364C006033B5 /* NotificationCenter in Resources */ = {isa = PBXBuildFile; fileRef = 6806A3031F27364C006033B5 /* NotificationCenter */; };
+		6822219F1F347337004C666D /* DHCSnapshotDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6822219E1F347337004C666D /* DHCSnapshotDemoViewController.m */; };
+		682221A21F347354004C666D /* UIView+DHCSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 682221A11F347354004C666D /* UIView+DHCSnapshot.m */; };
 		68B6BC161F2F192000354B23 /* DHCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B6BC151F2F192000354B23 /* DHCTableViewCell.m */; };
 		68C8AAF91F1775230007D096 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAF81F1775230007D096 /* MyViewController.m */; };
 		68C8AAFD1F189C180007D096 /* KVOTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8AAFC1F189C180007D096 /* KVOTest.m */; };
@@ -45,6 +47,10 @@
 		6806A2FC1F2241B2006033B5 /* NSString+DHC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DHC.h"; sourceTree = "<group>"; };
 		6806A2FD1F2241B2006033B5 /* NSString+DHC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DHC.m"; sourceTree = "<group>"; };
 		6806A3031F27364C006033B5 /* NotificationCenter */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NotificationCenter; sourceTree = "<group>"; };
+		6822219D1F347337004C666D /* DHCSnapshotDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCSnapshotDemoViewController.h; sourceTree = "<group>"; };
+		6822219E1F347337004C666D /* DHCSnapshotDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCSnapshotDemoViewController.m; sourceTree = "<group>"; };
+		682221A01F347354004C666D /* UIView+DHCSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DHCSnapshot.h"; sourceTree = "<group>"; };
+		682221A11F347354004C666D /* UIView+DHCSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DHCSnapshot.m"; sourceTree = "<group>"; };
 		68B6BC141F2F192000354B23 /* DHCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCTableViewCell.h; sourceTree = "<group>"; };
 		68B6BC151F2F192000354B23 /* DHCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCTableViewCell.m; sourceTree = "<group>"; };
 		68C8AAF71F1775230007D096 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 		2CB418641F07E6B4000A6F79 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6822219C1F3472FA004C666D /* Snapshot */,
 				68B6BC131F2F18CC00354B23 /* Autolayout */,
 				68D837B31F2B1B370088AF03 /* Lock */,
 				68D837B41F2B1B370088AF03 /* RunLoop */,
@@ -188,6 +195,17 @@
 				2C9DEEF71F278B3B008F3156 /* DHCNotificationCenter.m */,
 			);
 			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		6822219C1F3472FA004C666D /* Snapshot */ = {
+			isa = PBXGroup;
+			children = (
+				6822219D1F347337004C666D /* DHCSnapshotDemoViewController.h */,
+				6822219E1F347337004C666D /* DHCSnapshotDemoViewController.m */,
+				682221A01F347354004C666D /* UIView+DHCSnapshot.h */,
+				682221A11F347354004C666D /* UIView+DHCSnapshot.m */,
+			);
+			path = Snapshot;
 			sourceTree = "<group>";
 		};
 		68B6BC131F2F18CC00354B23 /* Autolayout */ = {
@@ -386,10 +404,12 @@
 				68FE7ECA1F0B7612001CD09A /* AppDelegate.m in Sources */,
 				68C8AB001F18C7AD0007D096 /* NSObject+dhc_observe.m in Sources */,
 				2CB4184F1F07DA09000A6F79 /* main.m in Sources */,
+				682221A21F347354004C666D /* UIView+DHCSnapshot.m in Sources */,
 				2CB418721F07E6FA000A6F79 /* UIViewController+DHC_AOP.m in Sources */,
 				2CB418751F07E86B000A6F79 /* MasonryViewAnimTest.m in Sources */,
 				68D837BB1F2B34E80088AF03 /* DHCLockDemo.m in Sources */,
 				68C8AAFD1F189C180007D096 /* KVOTest.m in Sources */,
+				6822219F1F347337004C666D /* DHCSnapshotDemoViewController.m in Sources */,
 				68B6BC161F2F192000354B23 /* DHCTableViewCell.m in Sources */,
 				68FE7ECB1F0B7612001CD09A /* ViewController.m in Sources */,
 				2C9DEEF81F278B3B008F3156 /* DHCNotificationCenter.m in Sources */,

@@ -56,6 +56,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     NSLog(@"OriginalViewDidAppear has been defined");
 }
 
@@ -92,7 +93,8 @@
 //    [self testForSet];
 //    [self testForNotificationCenter];
 //    [self testForLock];
-    [self testForCellAutolayout];
+//    [self testForCellAutolayout];
+    [self testForGCD];
 }
 
 - (void)btnClicked:(id)sender
@@ -103,6 +105,7 @@
 
 - (void)customViewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     NSLog(@"customViewDidAppear has been involked!");
 }
 
@@ -269,7 +272,7 @@
     
     [[DHCNotificationCenter defaultCenter] removeObserver:self name:@"testForNotificationCenter" object:nil];
     
-//    [[DHCNotificationCenter defaultCenter] removeObserver:self];
+    [[DHCNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)testForLock
@@ -310,6 +313,25 @@
         cell.index = indexPath.row;
         [cell test];
     }];
+}
+
+- (void)testForGCD
+{
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    for (int i = 0; i < 10; i++)
+    {
+        long value = dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        NSLog(@"value:%ld",value);
+        dispatch_group_async(group, queue, ^{
+            NSLog(@"%i",i);
+            sleep(1);
+            dispatch_semaphore_signal(semaphore);
+        });
+    }
+    long Iret = dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    NSLog(@"Iret:%ld",Iret);
 }
 
 

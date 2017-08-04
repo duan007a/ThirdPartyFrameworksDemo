@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NSMutableArray+Sort.h"
+#import "DHCSnapshotDemoViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,11 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSMutableArray *array = [@[@(1),@(2),@(3),@(4),@(5),@(6),@(7),@(8),@(9),@(10)] mutableCopy];
-//    [NSMutableArray sort_Bubble:array];
-    for (NSNumber *number in array) {
-        NSLog(@"number:%@",number);
-    }
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    DHCSnapshotDemoViewController *rootVC = [DHCSnapshotDemoViewController new];
+    self.window.rootViewController = rootVC;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
