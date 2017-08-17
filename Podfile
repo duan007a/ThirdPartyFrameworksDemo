@@ -11,6 +11,7 @@ target 'SDLCDHCDemo' do
   pod 'BlocksKit', '~> 2.2.5'
   pod 'CocoaLumberjack', '~> 3.2.0'
   pod 'Masonry', '~> 1.0.2'
+  pod 'KVOController', '~> 1.2.0'
 
 # 网络请求库
   pod 'AFNetworking', '~> 3.1.0'

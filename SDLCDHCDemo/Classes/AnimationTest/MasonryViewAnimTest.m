@@ -52,45 +52,4 @@
     }];
 }
 
-- (void)setTestNumber:(NSInteger)testNumber
-{
-    _testNumber = testNumber;
-}
-
-- (NSInteger)testNumber
-{
-    return _testNumber;
-}
-
-//- (NSInteger)hihao
-//{
-//    return 30;
-//}
-
-- (NSInteger)isHihao
-{
-    return 30;
-}
-
-- (NSUInteger)hash
-{
-    return [super hash];
-}
-
-
-- (BOOL)isEqual:(id)object
-{
-    if (![object isMemberOfClass:[self class]])
-    {
-        return NO;
-    }
-    
-    MasonryViewAnimTest *input = (MasonryViewAnimTest *)object;
-    if (self.testNumber == input.testNumber)
-    {
-        return YES;
-    }
-    return NO;
-}
-
 @end

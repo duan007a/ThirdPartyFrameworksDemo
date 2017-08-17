@@ -19,12 +19,23 @@
 #import "DHCLockDemo.h"
 #import "DHCTableViewCell.h"
 #import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
+#import "DHCRunLoopDemo.h"
+#import "NSObject+dhc_observe.h"
+#import "ViewA.h"
 
 @interface ViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     UIStackView *containerView;
 }
+
+@property (nonatomic, strong) KVOTest *kvoTest;
+
 @end
+
+static void testForRunLoopMethod()
+{
+    
+}
 
 @implementation ViewController
 
@@ -94,7 +105,9 @@
 //    [self testForNotificationCenter];
 //    [self testForLock];
 //    [self testForCellAutolayout];
-    [self testForGCD];
+//    [self testForGCD];
+//    [self testForRunloop];
+    [self testForEventHandlingAndResponderChains];
 }
 
 - (void)btnClicked:(id)sender
@@ -234,14 +247,16 @@
 
 - (void)testForKVO
 {
-    KVOTest *test = [KVOTest new];
-    [test testForKVO];
+    _kvoTest = [KVOTest new];
+//    [_kvoTest testForKVO];
     
-    [test setKvoValue:100];
+    [self dhc_observe:_kvoTest keyPath:@"kvoValue" options:NSKeyValueObservingOptionNew context:nil];
     
-    [[UIApplication sharedApplication] setAlternateIconName:@"newIcon.png" completionHandler:^(NSError * _Nullable error) {
-        NSLog(@"%@",error.description);
-    }];
+    [_kvoTest setKvoValue:100];
+    
+//    [[UIApplication sharedApplication] setAlternateIconName:@"newIcon.png" completionHandler:^(NSError * _Nullable error) {
+//        NSLog(@"%@",error.description);
+//    }];
 }
 
 - (void)testForSet
@@ -333,6 +348,28 @@
     long Iret = dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     NSLog(@"Iret:%ld",Iret);
 }
+
+- (void)testForRunloop
+{
+    DHCRunLoopDemo *demo = [DHCRunLoopDemo new];
+    [demo testDemo1];
+    
+//    CFRunLoopAddObserver(<#CFRunLoopRef rl#>, <#CFRunLoopObserverRef observer#>, <#CFRunLoopMode mode#>)
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    
+}
+
+- (void)testForEventHandlingAndResponderChains
+{
+    ViewA *viewA = [[ViewA alloc] initWithFrame:CGRectMake(40, 100, 70, 70)];
+//    viewA.alpha = 0.001f;
+    viewA.backgroundColor = UIColor.cyanColor;
+    [self.view addSubview:viewA];
+}
+
 
 
 @end

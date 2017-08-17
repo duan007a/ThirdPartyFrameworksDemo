@@ -9,6 +9,7 @@
 #import "KVOTest.h"
 #import <objc/runtime.h>
 #import "NSObject+dhc_observe.h"
+#import <KVOController/KVOController.h>
 
 @implementation KVOTest
 
@@ -17,6 +18,9 @@
     self = [super init];
     if (self) {
         _kvoValue = 10;
+//        [self.KVOController observe:self keyPath:@"kvoValue" options:NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+//            NSLog(@"new value:%@",change[@"new"]);
+//        }];
     }
     return self;
 }
@@ -25,10 +29,11 @@
 {
     [self printDebugInfo];
 //    [self addObserver:self forKeyPath:@"kvoValue" options:NSKeyValueObservingOptionNew context:nil];
-    [self dhc_observe:self keyPath:@"kvoValue" options:NSKeyValueObservingOptionNew context:nil];
-    [self printDebugInfo];
+//    [self dhc_observe:self keyPath:@"kvoValue" options:NSKeyValueObservingOptionNew context:nil];
+//    [self printDebugInfo];
 //    [self removeObserver:self forKeyPath:@"kvoValue"];
 //    [self printDebugInfo];
+    self.kvoValue = 40;
 }
 
 - (void)printDebugInfo

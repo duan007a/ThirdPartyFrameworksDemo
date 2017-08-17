@@ -19,10 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    DHCSnapshotDemoViewController *rootVC = [DHCSnapshotDemoViewController new];
-    self.window.rootViewController = rootVC;
-    [self.window makeKeyAndVisible];
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    DHCSnapshotDemoViewController *rootVC = [DHCSnapshotDemoViewController new];
+//    self.window.rootViewController = rootVC;
+//    [self.window makeKeyAndVisible];
     
     return YES;
 }
